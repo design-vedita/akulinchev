@@ -1,0 +1,34 @@
+include text
+
+- var ico = ['point','calendar','kurs','time']
+- var text = ['Тамбов','calendar','kurs','time']
+
+mixin content()
+   .container
+        .content-ico
+           .row
+              .col-xs-3.content-ico__item
+                 .content-ico__item__image
+                    +svg('point')
+                 .content-ico__item__text
+                    p   Тамбов
+                    p Улица Советская 168 Б
+              .col-xs-3.content-ico__item
+                 .content-ico__item__image
+                    +svg('calendar')
+                 .content-ico__item__text
+                    p   16 августа, 20:00
+                    p   Старт первой лекции
+              .col-xs-3.content-ico__item
+                 .content-ico__item__image
+                    +svg('kurs')
+                 .content-ico__item__text
+                    p   Обучающий курс
+                    p   Конференция
+              .col-xs-3.content-ico__item
+                 .content-ico__item__image
+                    +svg('kurs')
+                 .content-ico__item__text
+                    p   Лекция.  2 часа
+                    p   10 дней по 2 часа
+        +text()

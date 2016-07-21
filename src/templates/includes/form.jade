@@ -1,0 +1,24 @@
+mixin form()
+   form.my-form
+      .row
+         .col-xs-3.my-form__item
+            +svg('man')
+            input(type="text",placeholder="Ваше имя")
+         .col-xs-3.my-form__item
+            +svg('phone')
+            input(type="text",placeholder="Ваш телефон")
+         .col-xs-3.my-form__item
+            +svg('mail')
+            input(type="text",placeholder="Ваш e-mail")
+         .col-xs-3
+            +svg('time')
+            select
+               option   Цикл 1
+               option   Цикл 1 + 2
+               option   На весь курс
+      .row
+         .col-xs-12
+            input(type="submit",value="Записаться")
+
+
+

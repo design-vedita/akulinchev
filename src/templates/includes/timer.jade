@@ -1,0 +1,20 @@
+include counter
+include form
+
+mixin timer()
+   .timer-block
+      .container
+         .row
+            .col-md-12
+               .timer-block__title
+                  +svg('time')
+                  p  Успей до 1 августа
+
+               p.discount  Скидка на все циклы
+                  span  - 30%
+
+               +counter()
+
+               +form()
+
+

@@ -1,0 +1,31 @@
+- var links = ['О курсе', 'Циклы', 'Записаться', 'Партнёры', 'Контакты'];
+mixin header()
+   // Шапка сайта
+   header
+      .container
+         .row
+            .col-xs-2
+               .logo
+                  a(href="javascript:void(0)")
+                     img(src="../img/logo.png")
+            .col-xs-6.col-xs-offset-4
+               .top-menu
+                  nav
+                     ul
+                        each item in links
+                           li
+                              a(href="javascript:void(0)")= item
+         .row
+            .col-xs-12
+               .banner-text
+                  p.one-line
+                     |  Программа авторского трансформационного
+                     br
+                     |  мастер-курса
+                     span   Александра Акулинчева
+                  p.two-line
+                     |  Полная свобода
+                  p.three-line
+                     |  Счастливая и успешная жизнь сегодня !
+                  a(href="javascript:void(0)").check-in  Записаться
+

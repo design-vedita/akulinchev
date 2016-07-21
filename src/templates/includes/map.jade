@@ -1,0 +1,24 @@
+mixin map()
+   .map
+      .map__annotation
+         .container
+            .row
+               .col-xs-3.blue-block
+                  ul
+                     li
+                        +svg('calendar')
+                        .blue-block__description
+                           p  16 августа, 20:00
+                           span  Старт первой лекции
+                     li
+                        +svg('point')
+                        .blue-block__description
+                           p  Тамбов
+                           span  Амакс Парк отель
+                     li
+                        +svg('phone-2')
+                        .blue-block__description
+                           p  +7 (4752) 12-34-56
+                           span  Звоните
+      .map__inner
+         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HGlDFWvxWetVSzAw3OvuYJGQ33YEncAi&amp;width=100%&amp;height=345&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
