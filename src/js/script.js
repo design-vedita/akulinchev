@@ -3,6 +3,8 @@
 
     $(function(){
 
+        /*Р·Р°РґР°РµРј РІС‹СЃРѕС‚Сѓ Р·Р°РіРѕР»РѕРІРєРѕРІ РІ С†РёРєР»Р°С…*/
+
         function heightBlok (el) {
             var blocks = document.getElementsByClassName(el);
 
@@ -24,74 +26,74 @@
             }
         }
 
-        //функция вызова таймера
+        //С„СѓРЅРєС†РёСЏ РІС‹Р·РѕРІР° С‚Р°Р№РјРµСЂР°
         function get_timer() {
 
-            //Дата для обратного отсчета
+            //Р”Р°С‚Р° РґР»СЏ РѕР±СЂР°С‚РЅРѕРіРѕ РѕС‚СЃС‡РµС‚Р°
             var date_new = "August 1,2016 02:00";
             ////////////////////////////////////
             ////////////////////////////////////
 
-            //Объект даты для обратного отсчета
+            //РћР±СЉРµРєС‚ РґР°С‚С‹ РґР»СЏ РѕР±СЂР°С‚РЅРѕРіРѕ РѕС‚СЃС‡РµС‚Р°
             var date_t = new Date(date_new);
-            //Объект текущей даты
+            //РћР±СЉРµРєС‚ С‚РµРєСѓС‰РµР№ РґР°С‚С‹
             var date = new Date();
-            //Вычесляем сколько миллисекунд пройдет
-            //от текущей даты до даты отсчета времени
+            //Р’С‹С‡РµСЃР»СЏРµРј СЃРєРѕР»СЊРєРѕ РјРёР»Р»РёСЃРµРєСѓРЅРґ РїСЂРѕР№РґРµС‚
+            //РѕС‚ С‚РµРєСѓС‰РµР№ РґР°С‚С‹ РґРѕ РґР°С‚С‹ РѕС‚СЃС‡РµС‚Р° РІСЂРµРјРµРЅРё
             var timer = date_t - date;
 
-            //Проверяем не нужно ли закончить отсчет
-            //если дата отсчета еще не истекла, то количество
-            //миллисекунд в переменной date_t будет больше чем в переменной date
+            //РџСЂРѕРІРµСЂСЏРµРј РЅРµ РЅСѓР¶РЅРѕ Р»Рё Р·Р°РєРѕРЅС‡РёС‚СЊ РѕС‚СЃС‡РµС‚
+            //РµСЃР»Рё РґР°С‚Р° РѕС‚СЃС‡РµС‚Р° РµС‰Рµ РЅРµ РёСЃС‚РµРєР»Р°, С‚Рѕ РєРѕР»РёС‡РµСЃС‚РІРѕ
+            //РјРёР»Р»РёСЃРµРєСѓРЅРґ РІ РїРµСЂРµРјРµРЅРЅРѕР№ date_t Р±СѓРґРµС‚ Р±РѕР»СЊС€Рµ С‡РµРј РІ РїРµСЂРµРјРµРЅРЅРѕР№ date
             if(date_t > date) {
 
-                //Вычисляем сколько осталось дней до даты отсчета.
-                //Для этого количество миллисекунд до даты остчета делим
-                //на количество миллисекунд в одном дне
+                //Р’С‹С‡РёСЃР»СЏРµРј СЃРєРѕР»СЊРєРѕ РѕСЃС‚Р°Р»РѕСЃСЊ РґРЅРµР№ РґРѕ РґР°С‚С‹ РѕС‚СЃС‡РµС‚Р°.
+                //Р”Р»СЏ СЌС‚РѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІРѕ РјРёР»Р»РёСЃРµРєСѓРЅРґ РґРѕ РґР°С‚С‹ РѕСЃС‚С‡РµС‚Р° РґРµР»РёРј
+                //РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РјРёР»Р»РёСЃРµРєСѓРЅРґ РІ РѕРґРЅРѕРј РґРЅРµ
                 var day = parseInt(timer/(60*60*1000*24));
-                //если полученное число меньше 10 прибавляем 0
+                //РµСЃР»Рё РїРѕР»СѓС‡РµРЅРЅРѕРµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ 10 РїСЂРёР±Р°РІР»СЏРµРј 0
                 if(day < 10) {
                     day = '0' + day;
                 }
-                //Приводим результат к строке
+                //РџСЂРёРІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚ Рє СЃС‚СЂРѕРєРµ
                 day = day.toString();
 
-                //Вычисляем сколько осталось часов до даты отсчета.
-                //Для этого переменную timer делим на количество
-                //миллисекунд в одном часе и отбрасываем дни
+                //Р’С‹С‡РёСЃР»СЏРµРј СЃРєРѕР»СЊРєРѕ РѕСЃС‚Р°Р»РѕСЃСЊ С‡Р°СЃРѕРІ РґРѕ РґР°С‚С‹ РѕС‚СЃС‡РµС‚Р°.
+                //Р”Р»СЏ СЌС‚РѕРіРѕ РїРµСЂРµРјРµРЅРЅСѓСЋ timer РґРµР»РёРј РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ
+                //РјРёР»Р»РёСЃРµРєСѓРЅРґ РІ РѕРґРЅРѕРј С‡Р°СЃРµ Рё РѕС‚Р±СЂР°СЃС‹РІР°РµРј РґРЅРё
                 var hour = parseInt(timer/(60*60*1000))%24;
-                //если полученное число меньше 10 прибавляем 0
+                //РµСЃР»Рё РїРѕР»СѓС‡РµРЅРЅРѕРµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ 10 РїСЂРёР±Р°РІР»СЏРµРј 0
                 if(hour < 10) {
                     hour = '0' + hour;
                 }
-                //Приводим результат к строке
+                //РџСЂРёРІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚ Рє СЃС‚СЂРѕРєРµ
                 hour = hour.toString();
 
-                //Вычисляем сколько осталось минут до даты отсчета.
-                //Для этого переменную timer делим на количество
-                //миллисекунд в одной минуте и отбрасываем часы
+                //Р’С‹С‡РёСЃР»СЏРµРј СЃРєРѕР»СЊРєРѕ РѕСЃС‚Р°Р»РѕСЃСЊ РјРёРЅСѓС‚ РґРѕ РґР°С‚С‹ РѕС‚СЃС‡РµС‚Р°.
+                //Р”Р»СЏ СЌС‚РѕРіРѕ РїРµСЂРµРјРµРЅРЅСѓСЋ timer РґРµР»РёРј РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ
+                //РјРёР»Р»РёСЃРµРєСѓРЅРґ РІ РѕРґРЅРѕР№ РјРёРЅСѓС‚Рµ Рё РѕС‚Р±СЂР°СЃС‹РІР°РµРј С‡Р°СЃС‹
                 var min = parseInt(timer/(1000*60))%60;
-                //если полученное число меньше 10 прибавляем 0
+                //РµСЃР»Рё РїРѕР»СѓС‡РµРЅРЅРѕРµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ 10 РїСЂРёР±Р°РІР»СЏРµРј 0
                 if(min < 10) {
                     min = '0' + min;
                 }
-                //Приводим результат к строке
+                //РџСЂРёРІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚ Рє СЃС‚СЂРѕРєРµ
                 min = min.toString();
 
-                //Вычисляем сколько осталось секунд до даты отсчета.
-                //Для этого переменную timer делим на количество
-                //миллисекунд в одной минуте и отбрасываем минуты
+                //Р’С‹С‡РёСЃР»СЏРµРј СЃРєРѕР»СЊРєРѕ РѕСЃС‚Р°Р»РѕСЃСЊ СЃРµРєСѓРЅРґ РґРѕ РґР°С‚С‹ РѕС‚СЃС‡РµС‚Р°.
+                //Р”Р»СЏ СЌС‚РѕРіРѕ РїРµСЂРµРјРµРЅРЅСѓСЋ timer РґРµР»РёРј РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ
+                //РјРёР»Р»РёСЃРµРєСѓРЅРґ РІ РѕРґРЅРѕР№ РјРёРЅСѓС‚Рµ Рё РѕС‚Р±СЂР°СЃС‹РІР°РµРј РјРёРЅСѓС‚С‹
                 var sec = parseInt(timer/1000)%60;
-                //если полученное число меньше 10 прибавляем 0
+                //РµСЃР»Рё РїРѕР»СѓС‡РµРЅРЅРѕРµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ 10 РїСЂРёР±Р°РІР»СЏРµРј 0
                 if(sec < 10) {
                     sec = '0' + sec;
                 }
-                //Приводим результат к строке
+                //РџСЂРёРІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚ Рє СЃС‚СЂРѕРєРµ
                 sec = sec.toString();
 
-                //Выводим дни
-                //Проверяем какие предыдущие цифры времени должны вывестись на экран
-                //Для десятков дней
+                //Р’С‹РІРѕРґРёРј РґРЅРё
+                //РџСЂРѕРІРµСЂСЏРµРј РєР°РєРёРµ РїСЂРµРґС‹РґСѓС‰РёРµ С†РёС„СЂС‹ РІСЂРµРјРµРЅРё РґРѕР»Р¶РЅС‹ РІС‹РІРµСЃС‚РёСЃСЊ РЅР° СЌРєСЂР°РЅ
+                //Р”Р»СЏ РґРµСЃСЏС‚РєРѕРІ РґРЅРµР№
                 if(day[1] == 9 &&
                     hour[0] == 2 &&
                     hour[1] == 3 &&
@@ -104,7 +106,7 @@
                 else {
                     $(".day0").html(day[0]);
                 }
-                //Для единиц дней
+                //Р”Р»СЏ РµРґРёРЅРёС† РґРЅРµР№
                 if(hour[0] == 2 &&
                     hour[1] == 3 &&
                     min[0] == 5 &&
@@ -116,9 +118,9 @@
                 else {
                     $(".day1").html(day[1]);
                 }
-                //Выводим часы
-                //Проверяем какие предыдущие цифры времени должны вывестись на экран
-                //Для десятков часов
+                //Р’С‹РІРѕРґРёРј С‡Р°СЃС‹
+                //РџСЂРѕРІРµСЂСЏРµРј РєР°РєРёРµ РїСЂРµРґС‹РґСѓС‰РёРµ С†РёС„СЂС‹ РІСЂРµРјРµРЅРё РґРѕР»Р¶РЅС‹ РІС‹РІРµСЃС‚РёСЃСЊ РЅР° СЌРєСЂР°РЅ
+                //Р”Р»СЏ РґРµСЃСЏС‚РєРѕРІ С‡Р°СЃРѕРІ
                 if(hour[1] == 3 &&
                     min[0] == 5 &&
                     min[1] == 9 &&
@@ -129,7 +131,7 @@
                 else {
                     $(".hour0").html(hour[0]);
                 }
-                //Для единиц чассов
+                //Р”Р»СЏ РµРґРёРЅРёС† С‡Р°СЃСЃРѕРІ
                 if(min[0] == 5 &&
                     min[1] == 9 &&
                     sec[0] == 5 &&
@@ -140,9 +142,9 @@
                     $(".hour1").html(hour[1]);
                 }
 
-                //Выводим минуты
-                //Проверяем какие предыдущие цифры времени должны вывестись на экран
-                //Для десятков минут
+                //Р’С‹РІРѕРґРёРј РјРёРЅСѓС‚С‹
+                //РџСЂРѕРІРµСЂСЏРµРј РєР°РєРёРµ РїСЂРµРґС‹РґСѓС‰РёРµ С†РёС„СЂС‹ РІСЂРµРјРµРЅРё РґРѕР»Р¶РЅС‹ РІС‹РІРµСЃС‚РёСЃСЊ РЅР° СЌРєСЂР°РЅ
+                //Р”Р»СЏ РґРµСЃСЏС‚РєРѕРІ РјРёРЅСѓС‚
                 if(min[1] == 9 &&
                     sec[0] == 5 &&
                     sec[1] == 9) {
@@ -151,7 +153,7 @@
                 else {
                     $(".min0").html(min[0]);
                 }
-                //Для единиц минут
+                //Р”Р»СЏ РµРґРёРЅРёС† РјРёРЅСѓС‚
                 if(sec[0] == 5 && sec[1] == 9) {
                     animation($(".min1"),min[1]);
                 }
@@ -159,9 +161,9 @@
                     $(".min1").html(min[1]);
                 }
 
-                //Выводим секунды
-                //Проверяем какие предыдущие цифры времени должны вывестись на экран
-                //Для десятков секунд
+                //Р’С‹РІРѕРґРёРј СЃРµРєСѓРЅРґС‹
+                //РџСЂРѕРІРµСЂСЏРµРј РєР°РєРёРµ РїСЂРµРґС‹РґСѓС‰РёРµ С†РёС„СЂС‹ РІСЂРµРјРµРЅРё РґРѕР»Р¶РЅС‹ РІС‹РІРµСЃС‚РёСЃСЊ РЅР° СЌРєСЂР°РЅ
+                //Р”Р»СЏ РґРµСЃСЏС‚РєРѕРІ СЃРµРєСѓРЅРґ
                 if(sec[1] == 9) {
                     animation($(".sec0"),sec[0]);
                 }
@@ -169,12 +171,12 @@
                     $(".sec0").html(sec[0]);
                 }
                 animation($(".sec1"),sec[1]);
-                //Переодически вызываем созданную функцию,
-                //интервал вызова одна секунда(1000 милли секунд)
+                //РџРµСЂРµРѕРґРёС‡РµСЃРєРё РІС‹Р·С‹РІР°РµРј СЃРѕР·РґР°РЅРЅСѓСЋ С„СѓРЅРєС†РёСЋ,
+                //РёРЅС‚РµСЂРІР°Р» РІС‹Р·РѕРІР° РѕРґРЅР° СЃРµРєСѓРЅРґР°(1000 РјРёР»Р»Рё СЃРµРєСѓРЅРґ)
                 setTimeout(get_timer,1000);
             }
             else {
-                $("#clock").html("<span id='stop'>Отсчет закончен!!!</span>");
+                $("#clock").html("<span id='stop'>РћС‚СЃС‡РµС‚ Р·Р°РєРѕРЅС‡РµРЅ!!!</span>");
             }
 
         }
@@ -185,8 +187,147 @@
                 .animate({'marginTop':'0px','opacity':'1'});
         }
 
+        /* РџРѕРєР°Р·С‹РІР°РµРј popup*/
+
+        function application() {
+            var link = document.getElementsByClassName('js-application'),
+                popup = document.getElementsByClassName('js-popup')[0],
+                closePopup = document.getElementsByClassName('cl'),
+                overlay = document.getElementsByClassName('js-overlay')[0],
+                body = document.body,
+                docElem = document.documentElement,
+                scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+                scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft;
+
+            var width = popup.offsetWidth,
+                height = popup.offsetHeight;
+
+
+            for (var i = 0; i < link.length; i++) {
+                link[i].onclick = function() {
+                    popup.classList.add('popup--visible');
+                    overlay.classList.add('popup-overlay--visible');
+
+                    if(popup.classList.contains('popup--visible')) {
+                        popup.style.left = scrollLeft + (docElem.clientWidth - width) / 2 + 'px';
+                        popup.style.top = scrollTop + (docElem.clientHeight - height) / 2 + 'px';
+                    }
+                }
+            }
+
+
+            for (var j = 0; j < closePopup.length; j++) {
+                closePopup[j].onclick = function(){
+                    popup.classList.remove('popup--visible');
+                    overlay.classList.remove('popup-overlay--visible');
+                }
+            }
+
+
+        }
+
+        // РџР»Р°РІРЅС‹Р№ РїРµСЂРµС…РѕРґ РїРѕ СЃСЃС‹Р»РєР°Рј
+
+        $('.js-check-in, .js-top-menu-link').click(function(){
+            var link = $(this).attr('href');
+            $('html, body').animate({scrollTop: $(link).offset().top}, 1000);
+            return false;
+        });
+
+        // РџРµСЂРµС…РѕРґ РјРµР¶РґСѓ С†РёРєР»Р°РјРё РІРѕ РІСЃРїР»С‹РІР°СЋС‰РµРј РѕРєРЅРµ
+
+        function nextPopup() {
+            var links = document.getElementsByClassName('js-view-popup'),
+                blocks = document.getElementsByClassName('js-block'),
+                popup = document.getElementsByClassName('js-popupText')[0];
+
+
+                for (var i = 0; i < links.length; i++) {
+
+                    links[i].onclick = function() {
+                        var attrLink = this.getAttribute('data-visible');
+
+                            for (var j = 0; j < blocks.length; j++) {
+
+                                var attrBlock = blocks[j].getAttribute('data-visible');
+
+                                    if (attrLink == attrBlock) {
+                                        blocks[j].classList.add('block--visible');
+                                        console.log();
+                                        $('html, body').animate({scrollTop: popup.offsetTop}, 1000);
+                                    } else {
+                                        blocks[j].classList.remove('block--visible');
+                                    }
+                            }
+                    }
+                }
+        }
+
+        // РўРµРєСЃС‚РѕРІС‹Р№ РїРѕРїР°Рї 
+
+        function popupText() {
+            var link = document.getElementsByClassName('js-more'),
+                popup = document.getElementsByClassName('js-popupText')[0],
+                closePopup = document.getElementsByClassName('js-close'),
+                overlay = document.getElementsByClassName('js-overlay')[0],
+                body = document.body,
+                docElem = document.documentElement,
+                scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+                scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft;
+
+            var width = popup.offsetWidth,
+                height = popup.offsetHeight;
+
+            for (var i = 0; i < link.length; i++) {
+
+                link[i].onclick = function() {
+                    popup.classList.add('popup--visible');
+                    overlay.classList.add('popup-overlay--visible');
+
+                    if(popup.classList.contains('popup--visible')) {
+                        popup.style.left = scrollLeft + (docElem.clientWidth - width) / 2 + 'px';
+                        popup.style.top = scrollTop + (docElem.clientHeight - height) / 2 + 'px';
+                    }
+                }
+            }
+
+
+            for (var j = 0; j < closePopup.length; j++) {
+                closePopup[j].onclick = function(){
+                    popup.classList.remove('popup--visible');
+                    overlay.classList.remove('popup-overlay--visible');
+                }
+            }
+
+        }
+
+        function checkOutPopup() {
+            var popup = document.getElementsByClassName('js-popup')[0],
+                popupText = document.getElementsByClassName('js-popupText')[0],
+                link = document.getElementsByClassName('js-popup-check');
+
+                for (var i = 0; i < link.length; i++) {
+
+                    link[i].onclick = function() {
+                        popup.classList.add('popup--visible');
+                        popupText.classList.remove('popup--visible')
+                    }
+                }
+
+        }
+
+
+        checkOutPopup();
+        popupText();
+        nextPopup();
+        application();
         get_timer();
         heightBlok('js-cycle-title');
+
+        window.onscroll = function() {
+            popupText();
+            application();
+        }
 
 
         $('select').styler();

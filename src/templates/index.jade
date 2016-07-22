@@ -7,6 +7,9 @@ include includes/timer
 include includes/annotation
 include includes/partners
 include includes/map
+include includes/overlay
+include includes/popup
+include includes/popupText
 include includes/mixins
 
 doctype html
@@ -15,12 +18,18 @@ html(lang="en")
       +head()
 
    main
+      +overlay()
+      +popupText()
+      +popup()
+
       include blocks/svg.html
+
       +header()
 
       +content()
 
-      +timer()
+      #form
+         +timer()
 
       +annotation()
 

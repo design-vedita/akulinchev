@@ -1,36 +1,115 @@
-.pagetitle() {
-  font: bold 54px/48px @ptserif;
-  color: @linkTop;
-  text-align: center;
-  margin-bottom: 0;
-  word-break: break-all;
-}
+.form(@inputColor: @white;@svgColor: @white;@marginTop: 70px;@marginTopSubmit: 70px) {
+.my-form {
+  font-size: 0;
+  margin-top: @marginTop;
 
-.pageTopBorder() {
-  border-top: 1px @mapBorder solid;
-  margin-top: 10px;
-  padding-top: 31px;
-}
+  svg {
+    transition: fill .3s linear;
 
-.wrapImg(@margin: auto;) {
-  margin-left: -1.5px;
-  margin-right: -1.5px;
+    &.man {
+      width: 25px;
+      height: 27px;
+      display: inline-block;
+      vertical-align: middle;
+      fill: @svgColor;
+    }
 
-    ul {
-      font-size: 0;
-      margin-top: 31px;
+    &.phone {
+      width: 21px;
+      height: 25px;
+      display: inline-block;
+      vertical-align: middle;
+      fill: @svgColor;
+    }
 
-      li {
-        width: 20%;
-        padding-left: 1.5px;
-        padding-right: 1.5px;
-        display: inline-block;
-        margin-bottom: @margin;
+    &.mail {
+      width: 27px;
+      height: 21px;
+      display: inline-block;
+      vertical-align: middle;
+      fill: @svgColor;
+    }
 
-        img {
-          width: 100%;
-          height: auto;
-        }
+    &.time {
+      width: 23px;
+      height: 28px;
+      display: inline-block;
+      vertical-align: middle;
+      fill: @svgColor;
+    }
+  }
+
+  input {
+
+    &[type=text] {
+      font-size: 16px;
+      color: @inputColor;
+      font-weight: bold;
+      vertical-align: middle;
+      margin-left: 23px;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px @inputColor solid;
+      width: calc(~'100% - 50px');
+      padding-bottom: 4px;
+      transition: border .3s linear;
+      border-radius: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+
+      &:focus {
+        border-bottom-color: @yellowForm;
+        outline: none;
       }
     }
+
+    &[type=submit] {
+      font-size: 22px;
+      font-weight: bold;
+      color: @brown;
+      background-color: @yellowForm;
+      display: block;
+      width: 195px;
+      height: 43px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin: @marginTopSubmit auto 0;
+      transition: background .3s linear;
+      box-shadow: none;
+      -webkit-appearance: none;
+
+      &:hover {
+        background-color: @orange;
+      }
+    }
+  }
+
+  select {
+    font-size: 16px;
+    color: @yellowForm;
+    font-weight: bold;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__item {
+
+    &:hover {
+
+      svg {
+        fill: @yellowForm;
+      }
+
+      input {
+        border-bottom-color: @yellowForm;
+      }
+
+    }
+  }
+}
 }

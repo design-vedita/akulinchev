@@ -14,7 +14,7 @@ mixin header()
                      ul
                         each item in links
                            li
-                              a(href="javascript:void(0)")= item
+                              a(href="javascript:void(0)").js-top-menu-link= item
          .row
             .col-xs-12
                .banner-text
@@ -27,5 +27,5 @@ mixin header()
                      |  Полная свобода
                   p.three-line
                      |  Счастливая и успешная жизнь сегодня !
-                  a(href="javascript:void(0)").check-in  Записаться
+                  a(href="#form").check-in.js-check-in  Записаться
 
