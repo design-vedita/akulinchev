@@ -13,16 +13,19 @@
 
             for (var i = 0; i < blocks.length; i++) {
 
+
                 if (blocks[i].offsetHeight > max) {
                     maxindex = i;
                     max = blocks[i].offsetHeight;
-
-                    blocks[i].classList.add('anchor')
                 }
 
-                if(!blocks[i].classList.contains('anchor')) {
-                    blocks[i].style.height = max + 'px';
+                for(var j = 0; j < blocks.length; j++) {
+
+                    if(blocks[j].offsetHeight < max) {
+                        blocks[j].style.height = max + 'px';
+                    }
                 }
+
             }
         }
 
@@ -253,7 +256,6 @@
 
                                     if (attrLink == attrBlock) {
                                         blocks[j].classList.add('block--visible');
-                                        console.log();
                                         $('html, body').animate({scrollTop: popup.offsetTop}, 1000);
                                     } else {
                                         blocks[j].classList.remove('block--visible');
@@ -263,10 +265,11 @@
                 }
         }
 
-        // Текстовый попап 
+        // Текстовый попап
 
         function popupText() {
             var link = document.getElementsByClassName('js-more'),
+                blocks = document.getElementsByClassName('js-block'),
                 popup = document.getElementsByClassName('js-popupText')[0],
                 closePopup = document.getElementsByClassName('js-close'),
                 overlay = document.getElementsByClassName('js-overlay')[0],
@@ -281,6 +284,21 @@
             for (var i = 0; i < link.length; i++) {
 
                 link[i].onclick = function() {
+
+                    var attrLink = this.getAttribute('data-type');
+
+                        for (var j = 0; j < blocks.length; j++) {
+
+                            var attrBlock = blocks[j].getAttribute('data-visible');
+
+                            if (attrLink == attrBlock) {
+                                blocks[j].classList.add('block--visible');
+                            } else {
+                                blocks[j].classList.remove('block--visible');
+                            }
+                        }
+
+
                     popup.classList.add('popup--visible');
                     overlay.classList.add('popup-overlay--visible');
 
@@ -304,13 +322,25 @@
         function checkOutPopup() {
             var popup = document.getElementsByClassName('js-popup')[0],
                 popupText = document.getElementsByClassName('js-popupText')[0],
-                link = document.getElementsByClassName('js-popup-check');
+                link = document.getElementsByClassName('js-popup-check'),
+                body = document.body,
+                docElem = document.documentElement,
+                scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+                scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft;
+
+            var width = popup.offsetWidth,
+                height = popup.offsetHeight;
 
                 for (var i = 0; i < link.length; i++) {
 
                     link[i].onclick = function() {
                         popup.classList.add('popup--visible');
-                        popupText.classList.remove('popup--visible')
+                        popupText.classList.remove('popup--visible');
+
+                        if(popup.classList.contains('popup--visible')) {
+                            popup.style.left = scrollLeft + (docElem.clientWidth - width) / 2 + 'px';
+                            popup.style.top = scrollTop + (docElem.clientHeight - height) / 2 + 'px';
+                        }
                     }
                 }
 
@@ -323,10 +353,12 @@
         application();
         get_timer();
         heightBlok('js-cycle-title');
+        heightBlok('js-cycle-item');
 
         window.onscroll = function() {
             popupText();
             application();
+            checkOutPopup();
         }
 
 

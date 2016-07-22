@@ -275,17 +275,18 @@
 	color: #888;
 }
 .jq-selectbox__trigger {
-	display: none;
+/*	display: none;*/
 }
 .jq-selectbox__trigger-arrow {
 	position: absolute;
 	top: 14px;
 	right: 12px;
-	width: 0;
-	height: 0;
-	border-top: 5px solid #999;
+	width: 9px;
+	height: 5px;
+	background-image: url(../../../img/arrow.png);
+	/*border-top: 5px solid #999;
 	border-right: 5px solid transparent;
-	border-left: 5px solid transparent;
+	border-left: 5px solid transparent;*/
 }
 .jq-selectbox:hover .jq-selectbox__trigger-arrow {
 	border-top-color: #000;

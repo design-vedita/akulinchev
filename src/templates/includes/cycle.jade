@@ -6,7 +6,7 @@ mixin cycle()
             span.cycle-number  Цикл 1
             p.duration  2 тренинговых дня 16 астрономических рабочих часов
             p.title.js-cycle-title  «Личностное редактирование и реинжиниринг собственной судьбы»
-            a(href="javascript:void(0)").more.js-more   Подробнее
+            a(href="javascript:void(0)",data-type="one-block").more.js-more   Подробнее
             a(href="javascript:void(0)").application.js-application  Оставить заявку
 
          .col-xs-4.cycle__item.js-cycle-item
@@ -14,7 +14,7 @@ mixin cycle()
             span.cycle-number  Цикл 2
             p.duration  2 тренинговых дня 16 астрономических рабочих часов
             p.title.js-cycle-title  «Совершенствование Мастерства моего Я»
-            a(href="javascript:void(0)").more.js-more   Подробнее
+            a(href="javascript:void(0)",data-type="two-block").more.js-more   Подробнее
             .cycle__item__dop-info
                +svg('danger')
                span  Цикл 1 + Цикл 2
@@ -32,7 +32,7 @@ mixin cycle()
             span.cycle-number  Цикл 3
             p.duration 3 тренинговых дня 24 астрономических рабочих часов
             p.title.js-cycle-title  «Власть изменений – могущество моего Я»
-            a(href="javascript:void(0)").more.js-more   Подробнее
+            a(href="javascript:void(0)",data-type="three-block").more.js-more   Подробнее
             .cycle__item__dop-info
                +svg('danger')
                span  Цикл 1 + Цикл 2 + Цикл 3

@@ -11,6 +11,7 @@ body {
 header {
   height: 750px;
   width: 100%;
+  min-width: 1170px;
   background-image: url(../img/banner.png);
   background-size: cover;
   background-position: center;
@@ -256,6 +257,7 @@ main {
           font-size: 30px;
           font-weight: bold;
           line-height: 40px;
+          text-align: center;
         }
     }
 
@@ -471,6 +473,7 @@ main {
 
     .timer-block {
       width: 100%;
+      min-width: 1170px;
       height: 657px;
       background-image: url(../img/timer-back.jpg);
       background-size: cover;
@@ -544,8 +547,22 @@ main {
               background-color: @blueLight;
               border-radius: 50px;
               box-sizing: border-box;
-              padding-left: 79px;
-              padding-right: 65px;
+              padding-left: 65px;
+              padding-right: 35px;
+              position: relative;
+
+                &::before {
+                  display: block;
+                  position: absolute;
+                  content: '';
+                  width: 50%;
+                  height: 100%;
+                  border-radius: 0 20px 20px 0;
+                  background-color: @blue;
+                  right: 0;
+                  top: 0;
+                  z-index: 0;
+                }
 
                 &::after {
                   display: block;
@@ -554,6 +571,7 @@ main {
                 }
 
                 & > div {
+                  position: relative;
 
                     p {
                       font-size: 58px;
@@ -933,6 +951,7 @@ main {
 
     .map {
       width: 100%;
+      min-width: 1170px;
       height: 345px;
       position: relative;
       margin-top: 95px;
@@ -1083,7 +1102,7 @@ main {
               }
             }
 
-            span {
+            & > span {
               font-size: 65px;
               color: @blueDirty;
               font-weight: bold;
@@ -1343,6 +1362,7 @@ main {
           background-color: fadeOut(@black, 20%);
           position: absolute;
           width: 100%;
+          min-width: 1170px;
           height: 100%;
           z-index: 101;
           visibility: hidden;
