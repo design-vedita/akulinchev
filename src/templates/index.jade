@@ -17,30 +17,31 @@ html(lang="en")
    head
       +head()
 
-   main
-      +overlay()
-      +popupText()
-      +popup()
+   body
+      main
+         +overlay()
+         +popupText()
+         +popup()
 
-      include blocks/svg.html
+         include blocks/svg.html
 
-      +header()
+         +header()
 
-      +content()
+         +content()
 
-      #form
+         #form
+            +timer()
+
+         +annotation()
+
          +timer()
 
-      +annotation()
+         +partners()
 
-      +timer()
+         +map()
 
-      +partners()
+      footer
 
-      +map()
+         +footer()
 
-   footer
-
-      +footer()
-
-   +scripts()
+      +scripts()

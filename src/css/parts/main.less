@@ -539,9 +539,9 @@ main {
             }
         }
 
-        #timer_wrap {
+        .timer_wrap {
 
-            #clock {
+            .clock {
               width: 571px;
               margin: 53px auto 0;
               background-color: @blueLight;
@@ -582,7 +582,7 @@ main {
                     }
                 }
 
-                #day {
+                .day {
                   float: left;
 
                     span {
@@ -591,9 +591,10 @@ main {
                       color: @white;
                       text-transform: uppercase;
                       margin-right: 4px;
+                      padding-top: 5px;
                     }
 
-                    #day1 {
+                    .day1 {
                       margin-left: -4px;
                     }
 
@@ -607,7 +608,7 @@ main {
                     }
                 }
 
-                #razd {
+                .razd {
                   float: right;
                   font-size: 58px;
                   color: @white;
@@ -615,7 +616,7 @@ main {
                   line-height: 66px;
                 }
 
-                #hour {
+                .hour {
                   float: right;
 
                     p {
@@ -624,7 +625,7 @@ main {
                     }
                 }
 
-                #min {
+                .min {
                   float: right;
 
                   p {
@@ -633,7 +634,7 @@ main {
                   }
                 }
 
-                #sec {
+                .sec {
                   float: right;
 
                   p {
@@ -1052,6 +1053,11 @@ main {
           visibility: visible;
         }
 
+        .jq-selectbox__trigger-arrow {
+          background-image: url("../img/arrow-black.png");
+
+        }
+
         .block {
           display: none;
 
@@ -1178,6 +1184,14 @@ main {
           .jq-selectbox__select {
             color: @black;
             border-bottom-color: @black;
+
+              &:hover .jq-selectbox__trigger-arrow {
+                background-image: url("../img/arrow-hover.png");;
+              }
+
+              &:hover {
+                border-bottom-color: @yellowForm;
+              }
           }
 
           .jq-selectbox__select:hover {

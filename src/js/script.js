@@ -179,7 +179,7 @@
                 setTimeout(get_timer,1000);
             }
             else {
-                $("#clock").html("<span id='stop'>Отсчет закончен!!!</span>");
+                $(".js-clock").html("<span id='stop'>Отсчет закончен!!!</span>");
             }
 
         }
@@ -304,7 +304,7 @@
 
                     if(popup.classList.contains('popup--visible')) {
                         popup.style.left = scrollLeft + (docElem.clientWidth - width) / 2 + 'px';
-                        popup.style.top = scrollTop + (docElem.clientHeight - height) / 2 + 'px';
+                        popup.style.top = scrollTop + 'px';
                     }
                 }
             }
@@ -318,6 +318,9 @@
             }
 
         }
+
+        // внутри текстового попапа при вызове попапа заказа прячем текущий
+        //а попап заказа по центру
 
         function checkOutPopup() {
             var popup = document.getElementsByClassName('js-popup')[0],
@@ -346,7 +349,28 @@
 
         }
 
+        // по клику прячем и возвращаем плейсхолдер
+        function placeholder() {
+            var input = document.getElementsByTagName('input');
 
+                for (var i = 0; i < input.length; i++) {
+
+                    input[i].onfocus = function() {
+                        var attr = this.getAttribute('placeholder');
+                            this.setAttribute('data-text', attr);
+                            this.setAttribute('placeholder','');
+                    };
+
+                    input[i].onblur = function() {
+                        var attrData = this.getAttribute('data-text');
+                        this.setAttribute('placeholder', attrData);
+                        this.setAttribute('data-text','');
+                    }
+                }
+        }
+
+
+        placeholder();
         checkOutPopup();
         popupText();
         nextPopup();

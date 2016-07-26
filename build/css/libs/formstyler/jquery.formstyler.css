@@ -284,9 +284,13 @@
 	width: 9px;
 	height: 5px;
 	background-image: url(../../../img/arrow.png);
+	transition: background .3s linear;
 	/*border-top: 5px solid #999;
 	border-right: 5px solid transparent;
 	border-left: 5px solid transparent;*/
+}
+.jq-selectbox__trigger-arrow:hover {
+	background-image: url(../../../img/arrow-hover.png);
 }
 .jq-selectbox:hover .jq-selectbox__trigger-arrow {
 	border-top-color: #000;
